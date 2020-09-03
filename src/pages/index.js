@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 // components
-import Layout from "../../components/layout/layout";
+import Layout from "../components/layout/layout";
 
 const Home = () => {
   return (
