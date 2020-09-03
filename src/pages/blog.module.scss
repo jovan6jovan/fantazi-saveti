@@ -8,7 +8,7 @@
 
   a {
     background: #00ff87;
-    color: #fff;
+    color: rgba(0, 0, 0, 0.8);
     display: block;
     padding: 1rem;
     text-decoration: none;
@@ -25,5 +25,6 @@
   p {
     font-size: 0.8rem;
     font-style: italic;
+    color: #fff;
   }
 }

@@ -2,27 +2,9 @@ import React from 'react';
 import { graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
+// components
+import Head from "../components/head/head";
 import Layout from "../components/layout/layout";
-
-// export const query = graphql`
-// query (
-//   $slug: String
-// ) {
-//   markdownRemark (
-//     fields: {
-//       slug: {
-//         eq: $slug
-//       }
-//     }
-//   ) {
-//     frontmatter{
-//       title
-//       date
-//     }
-//     html
-//   }
-// }
-// `;
 
 export const query = graphql`
   query ($slug: String) {
@@ -50,6 +32,7 @@ const blogTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Head title={data.contentfulBlogPost.title} />
       <h1>{data.contentfulBlogPost.title}</h1>
       <p>{data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(data.contentfulBlogPost.body.json, options)}

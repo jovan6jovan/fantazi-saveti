@@ -27,7 +27,7 @@ const Header = () => {
               activeClassName={headerStyles.activeNavLink}
               to="/"
             >
-              Pocetna
+              Početna
             </Link>
           </li>
           <li>
