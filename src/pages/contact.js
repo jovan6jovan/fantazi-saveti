@@ -10,7 +10,7 @@ const Contact = () => {
       <Head title="Kontakt" />
       <section>
         <h1>Kontakt</h1>
-        <p>Kontaktirajte me. Forma ispod.</p>
+        <p>Možete me kontaktirati na <a href="mailto:jovan.jovanovic6@yahoo.com">jovan.jovanovic6@yahoo.com</a></p>
       </section>
     </Layout>
   )

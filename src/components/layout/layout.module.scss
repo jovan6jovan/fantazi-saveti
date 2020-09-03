@@ -1,7 +1,7 @@
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -9,4 +9,10 @@
 
 .content {
   flex-grow: 1;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    padding-top: 0;
+  }
 }
