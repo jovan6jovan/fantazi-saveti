@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from "gatsby";
 
-import Head from "../components/head/head";
+// components
+import Seo from "../components/seo/seo";
 import Layout from "../components/layout/layout";
 
 const NotFound = () => {
   return (
     <Layout>
-      <Head title="Greska 404" />
-      <h1>Stranica nije pronadjena</h1>
-      <Link to="/">nazad na pocetnu</Link>
+      <Seo title="Greška 404" />
+      <h1>Stranica nije pronađena</h1>
+      <Link to="/">nazad na početnu</Link>
     </Layout>
   )
 }

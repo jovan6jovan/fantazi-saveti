@@ -2,7 +2,7 @@ import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 // components
-import Head from "../components/head/head";
+import Seo from "../components/seo/seo";
 import Layout from "../components/layout/layout";
 
 // styles
@@ -30,7 +30,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      <Head title="Blog" />
+      <Seo title="Blog" />
       <section>
         <h1>Blog</h1>
         <p>Najkonkretniji fantazi saveti na netu.</p>
