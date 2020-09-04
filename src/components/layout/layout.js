@@ -11,9 +11,9 @@ import layoutStyles from "./layout.module.scss";
 const Layout = ({ children }) => {
   return (
     <div className={layoutStyles.container}>
+      <Header />
       <div className={layoutStyles.content}>
-        <Header />
-        { children }
+        {children}
       </div>
       <Footer />
     </div>

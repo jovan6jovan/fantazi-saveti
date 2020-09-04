@@ -34,18 +34,18 @@ const Blog = () => {
       <section>
         <h1>Blog</h1>
         <p>Najkonkretniji fantazi saveti na netu.</p>
-        <ul className={blogStyles.posts}>
-          {data.allContentfulBlogPost.edges.map((post, idx) => {
+        <div className={blogStyles.posts}>
+          {data.allContentfulBlogPost.edges.map((post) => {
             return (
-              <li key={idx} className={blogStyles.post}>
+              <article className={blogStyles.post}>
                 <Link to={`/blog/${post.node.slug}`}>
                   <h2>{post.node.title}</h2>
                   <p>{post.node.publishedDate}</p>
                 </Link>
-              </li>
+              </article>
             )
           })}
-        </ul>
+        </div>
       </section>
     </Layout>
   )
