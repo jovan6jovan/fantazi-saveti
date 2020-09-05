@@ -26,6 +26,7 @@ console.log(description, keywords, title, url);
       <meta name="keywords" content={keywords || data.site.siteMetadata.keywords} />
       <meta name="author" content={data.site.siteMetadata.author} />
       <link rel="canonical" href={url || data.site.siteMetadata.url} />
+      <meta name="google-site-verification" content="V_rJRM1cTlRL2rbUpxkOYMiXlVFF_LkmHx9SfV89yrg" />
     </Helmet>
   )
 }
