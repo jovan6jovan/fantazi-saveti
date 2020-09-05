@@ -35,9 +35,9 @@ const Blog = () => {
         <h1>Blog</h1>
         <p>Najkonkretniji fantazi saveti na netu.</p>
         <div className={blogStyles.posts}>
-          {data.allContentfulBlogPost.edges.map((post) => {
+          {data.allContentfulBlogPost.edges.map((post, idx) => {
             return (
-              <article className={blogStyles.post}>
+              <article key={idx} className={blogStyles.post}>
                 <Link to={`/blog/${post.node.slug}`}>
                   <h2>{post.node.title}</h2>
                   <p>{post.node.publishedDate}</p>

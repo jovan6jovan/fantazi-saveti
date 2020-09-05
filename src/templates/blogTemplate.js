@@ -10,6 +10,7 @@ export const query = graphql`
   query ($slug: String) {
     contentfulBlogPost(slug: {eq: $slug}) {
       title
+      slug
       publishedDate(formatString: "DD.MM.YYYY")
       body {
         json
@@ -30,9 +31,15 @@ const blogTemplate = ({ data }) => {
     }
   }
 
+  console.log(data.contentfulBlogPost.slug)
+
   return (
     <Layout>
-      <Seo title={data.contentfulBlogPost.title} />
+      <Seo
+        title={data.contentfulBlogPost.title}
+        description={data.contentfulBlogPost.title}
+        keywords={data.contentfulBlogPost.slug.replace("-", ", ")}
+      />
       <h1>{data.contentfulBlogPost.title}</h1>
       <p>{data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
