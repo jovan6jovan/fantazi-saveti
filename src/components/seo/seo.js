@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import { googleTagManager } from "./google-tag-manager";
 
 const Seo = ({ description, keywords, title, url }) => {
   const data = useStaticQuery(graphql`
@@ -17,7 +18,7 @@ const Seo = ({ description, keywords, title, url }) => {
   }
 `);
 
-console.log(description, keywords, title, url);
+// console.log(description, keywords, title, url);
 
   return (
     <Helmet>
@@ -29,11 +30,7 @@ console.log(description, keywords, title, url);
       <meta name="google-site-verification" content="V_rJRM1cTlRL2rbUpxkOYMiXlVFF_LkmHx9SfV89yrg" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177370134-1"></script>
       <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){window.dataLayer.push(arguments)}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-177370134-1');
+        googleTagManager();
       </script>
     </Helmet>
   )
