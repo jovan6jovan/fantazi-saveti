@@ -7,6 +7,15 @@ module.exports = {
     url: 'https://www.fantazi-saveti.com'
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+        options: {
+          trackingId: "UA-177370134-1",
+          head: true,
+          anonymize: true,
+          pageTransitionDelay: 0
+        }
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
