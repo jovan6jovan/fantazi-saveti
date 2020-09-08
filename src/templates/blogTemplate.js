@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // components
@@ -31,7 +31,7 @@ const blogTemplate = ({ data }) => {
     }
   }
 
-  console.log(data.contentfulBlogPost.slug)
+  // console.log(data.contentfulBlogPost.slug)
 
   return (
     <Layout>
@@ -43,6 +43,7 @@ const blogTemplate = ({ data }) => {
       <h1>{data.contentfulBlogPost.title}</h1>
       <p>{data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
+      <Link to="/blog">nazad na blog</Link>
     </Layout>
   )
 }
