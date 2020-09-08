@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { googleTagManager } from "./google-tag-manager";
 
 const Seo = ({ description, keywords, title, url }) => {
   const data = useStaticQuery(graphql`
@@ -28,7 +27,6 @@ const Seo = ({ description, keywords, title, url }) => {
       <meta name="author" content={data.site.siteMetadata.author} />
       <link rel="canonical" href={url || data.site.siteMetadata.url} />
       <meta name="google-site-verification" content="V_rJRM1cTlRL2rbUpxkOYMiXlVFF_LkmHx9SfV89yrg" />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177370134-1"></script>
     </Helmet>
   )
 }
