@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: 'Fantazi saveti',
     author: 'Cumberbatch',
-    description: 'Najbolji saveti za Fantasy Premier League',
+    description: 'Najbolji saveti za Fantasy Premier League. Statistike, transferi, taktike, i još mnogo toga...',
     keywords: 'fantazi, saveti, premijer liga, fpl, premijer liga fantazi',
     siteUrl: 'https://www.fantazi-saveti.com'
   },

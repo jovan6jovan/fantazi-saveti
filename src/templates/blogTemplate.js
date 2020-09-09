@@ -12,6 +12,7 @@ export const query = graphql`
       title
       slug
       publishedDate(formatString: "DD.MM.YYYY")
+      excerpt
       body {
         json
       }
@@ -31,13 +32,11 @@ const blogTemplate = ({ data }) => {
     }
   }
 
-  // console.log(data.contentfulBlogPost.slug)
-
   return (
     <Layout>
       <Seo
         title={data.contentfulBlogPost.title}
-        description={data.contentfulBlogPost.title}
+        description={data.contentfulBlogPost.excerpt}
         keywords={data.contentfulBlogPost.slug.replace("-", ", ")}
       />
       <h1>{data.contentfulBlogPost.title}</h1>

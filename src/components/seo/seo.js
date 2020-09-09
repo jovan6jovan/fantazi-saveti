@@ -1,34 +1,139 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, keywords, title, siteUrl }) => {
-  const data = useStaticQuery(graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        author
-        description
-        keywords
-        siteUrl
+const Seo = ({ description, lang, meta, image: metaImage, title, pathname }) => {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          keywords
+          siteUrl
+        }
       }
     }
-  }
-`);
+  `)
 
-// console.log(description, keywords, title, url);
+  const metaDescription = description || site.siteMetadata.description;
+  const image = metaImage && metaImage.src ? `${site.siteMetadata.siteUrl}${metaImage.src}` : null;
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
-    <Helmet>
-      <title>{`${data.site.siteMetadata.title} | ${title}`}</title>
-      <meta name="description" content={description || data.site.siteMetadata.description} />
-      <meta name="keywords" content={keywords || data.site.siteMetadata.keywords} />
-      <meta name="author" content={data.site.siteMetadata.author} />
-      <link rel="canonical" href={siteUrl || data.site.siteMetadata.siteUrl} />
-      <meta name="google-site-verification" content="V_rJRM1cTlRL2rbUpxkOYMiXlVFF_LkmHx9SfV89yrg" />
-    </Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        canonical
+          ? [
+              {
+                rel: "canonical",
+                href: canonical,
+              },
+            ]
+          : []
+      }
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          name: "keywords",
+          content: site.siteMetadata.keywords,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `google-site-verification`,
+          content: `V_rJRM1cTlRL2rbUpxkOYMiXlVFF_LkmHx9SfV89yrg`
+        }
+      ]
+        .concat(
+          metaImage
+            ? [
+                {
+                  property: "og:image",
+                  content: image,
+                },
+                {
+                  property: "og:image:width",
+                  content: metaImage.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: metaImage.height,
+                },
+                {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                },
+              ]
+            : [
+                {
+                  name: "twitter:card",
+                  content: "summary",
+                },
+              ]
+        )
+        .concat(meta)}
+    />
+    // <Helmet>
+    //   <title>{`${data.site.siteMetadata.title} | ${title}`}</title>
+    //   <meta name="description" content={description || data.site.siteMetadata.description} />
+    //   <meta name="keywords" content={keywords || data.site.siteMetadata.keywords} />
+    //   <meta name="author" content={data.site.siteMetadata.author} />
+    //   <link rel="canonical" href={siteUrl || data.site.siteMetadata.siteUrl} />
+    //   <meta name="google-site-verification" content="V_rJRM1cTlRL2rbUpxkOYMiXlVFF_LkmHx9SfV89yrg" />
+    // </Helmet>
   )
 }
 
-export default Seo;
+Seo.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
+
+Seo.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
+  pathname: PropTypes.string,
+}
+
+export default Seo
