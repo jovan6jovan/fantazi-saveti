@@ -1,27 +1,3 @@
-.watermark-wrapper {
-  position: relative;
-}
-
-.watermark-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-}
-
-.watermark {
-  color: rgba(0, 0, 0, 0.2);
-  font-size: 3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  transform: rotate(-45deg);
-  user-select: none;
-}
-
 .container {
   max-width: 900px;
   margin: 0 auto;

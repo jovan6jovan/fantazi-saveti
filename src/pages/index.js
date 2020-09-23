@@ -12,7 +12,7 @@ const Home = () => {
       <main>
         <h1>Najbolji saveti za Fantasy Premier League</h1>
         <p>Statistike, transferi, taktike...</p>
-        <Link to="/blog">Počni sa čitanjem</Link>
+        <Link to="/blog">Počni sa čitanjem &gt;</Link>
       </main>
     </Layout>
   )

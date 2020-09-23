@@ -42,7 +42,7 @@ const blogTemplate = ({ data }) => {
       <h1>{data.contentfulBlogPost.title}</h1>
       <p>{data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
-      <Link to="/blog">nazad na blog</Link>
+      <Link to="/blog">&lt; nazad na blog</Link>
     </Layout>
   )
 }
