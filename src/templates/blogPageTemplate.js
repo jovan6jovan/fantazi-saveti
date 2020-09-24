@@ -1,0 +1,55 @@
+import React from "react"
+import { Link, graphql } from "gatsby"
+
+// components
+import Seo from "../components/seo/seo"
+import Layout from "../components/layout/layout"
+import Pager from "../components/pager/pager"
+
+// styles
+import blogStyles from "../styles/blog.module.scss";
+
+export const query = graphql`
+  query($skip: Int!, $limit: Int!) {
+    allContentfulBlogPost(
+      sort: { fields: publishedDate, order: DESC }
+      skip: $skip
+      limit: $limit
+    ) {
+      edges {
+        node {
+          title
+          slug
+          publishedDate(formatString: "DD.MM.YYYY")
+        }
+      }
+    }
+  }
+`
+
+const blogPageTemplate = ({ data, pageContext }) => {
+  const articles = data.allContentfulBlogPost.edges
+
+  return (
+    <Layout>
+      <Seo title="Blog" />
+      <h1>Blog</h1>
+      <p>Najkonkretniji fantazi saveti na netu. Dominirajte mini ligama i ostvarite što bolji plasman.</p>
+      <div className={blogStyles.posts}>
+        {articles.map((article, idx) => {
+          return (
+            <article key={idx} className={blogStyles.post}>
+              <Link to={`/blog/${article.node.slug}`}>
+                <h2>{article.node.title}</h2>
+                <p>{article.node.publishedDate}</p>
+              </Link>
+            </article>
+          )
+        })}
+      </div>
+      <Pager pageContext={pageContext} />
+    </Layout>
+  )
+}
+
+export default blogPageTemplate
