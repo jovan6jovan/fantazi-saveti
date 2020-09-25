@@ -7,10 +7,10 @@ const Pager = ({ pageContext }) => {
   return (
     <div>
       {previousPagePath && (
-        <span><Link to={previousPagePath}>Prethodna</Link></span>
+        <span><Link to={previousPagePath}>&larr; Prethodna</Link></span>
       )}
       {nextPagePath && (
-        <span><Link to={nextPagePath}>Sledeća</Link></span>
+        <span><Link to={nextPagePath}>Sledeća &rarr;</Link></span>
       )}
     </div>
   )

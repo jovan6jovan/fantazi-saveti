@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "gatsby";
 
 // components
 import Seo from "../components/seo/seo";
 import Layout from "../components/layout/layout";
+import Button from "../components/button/button";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <main>
         <h1>Najbolji saveti za Fantasy Premier League</h1>
         <p>Statistike, transferi, taktike...</p>
-        <Link to="/blog">Počni sa čitanjem &gt;</Link>
+        <Button path="/blog" btnText="Počni sa čitanjem &rarr;" />
       </main>
     </Layout>
   )

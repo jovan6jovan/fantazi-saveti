@@ -1,0 +1,18 @@
+.btn {
+  background: #00ff87;
+  color: #16161a;
+  padding: 0.8rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 0.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background: darken(#00ff87, 10%);
+    color: #fffffe;
+  }
+}

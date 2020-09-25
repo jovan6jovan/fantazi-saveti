@@ -10,7 +10,7 @@ const NotFound = () => {
     <Layout>
       <Seo title="Greška 404" />
       <h1>Stranica nije pronađena</h1>
-      <Link to="/">nazad na početnu</Link>
+      <Link to="/">&larr; nazad na početnu</Link>
     </Layout>
   )
 }

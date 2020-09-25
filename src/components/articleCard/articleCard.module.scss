@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #fffffe;
+  color: #16161a;
+  border-radius: 0.5em;
+
+  span {
+    margin-bottom: 1rem;
+  }
+}
