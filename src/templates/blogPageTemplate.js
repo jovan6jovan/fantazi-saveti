@@ -34,10 +34,14 @@ const blogPageTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Seo title="Blog" />
+      <Seo
+        title="Blog"
+        description="Najkonkretniji saveti za Premier League Fantasy na netu. Dominirajte mini ligama i ostvarite što bolji plasman uz pomoć fantazi saveta."
+        keywords="fantasy premier league saveti, fantasy premier league srbija, fpl tips, fantazi saveti blog"
+      />
       <h1>Blog</h1>
       <p style={{marginBottom: "2.5rem"}}>
-        Najkonkretniji fantazi saveti na netu. Dominirajte mini ligama i ostvarite što bolji plasman.
+        Najkonkretniji saveti za Premier League Fantasy na netu. Dominirajte mini ligama i ostvarite što bolji plasman uz pomoć <strong>fantazi saveta</strong>.
       </p>
       <div className={blogStyles.posts}>
         {articles.map((article, idx) => {
