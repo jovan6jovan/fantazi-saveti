@@ -11,7 +11,7 @@ const ArticleCard = ({ title, date, excerpt, path }) => (
     <h2>{title}</h2>
     <span>{date}</span>
     <p>{excerpt}</p>
-    <Button path={path} btnText="Pročitaj članak" />
+    <Button path={path} btnText="Pročitajte članak" />
   </article>
 )
 
