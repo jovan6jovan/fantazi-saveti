@@ -7,9 +7,6 @@ import Layout from "../components/layout/layout"
 import Pager from "../components/pager/pager"
 import ArticleCard from "../components/articleCard/articleCard"
 
-// styles
-import blogStyles from "../styles/blog.module.scss";
-
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
     allContentfulBlogPost(
@@ -43,7 +40,7 @@ const blogPageTemplate = ({ data, pageContext }) => {
       <p style={{marginBottom: "2.5rem"}}>
         Najkonkretniji saveti za Premier League Fantasy na netu. Dominirajte mini ligama i ostvarite što bolji plasman uz pomoć <strong>fantazi saveta</strong>.
       </p>
-      <div className={blogStyles.posts}>
+      <div>
         {articles.map((article, idx) => {
           return (
             <ArticleCard
