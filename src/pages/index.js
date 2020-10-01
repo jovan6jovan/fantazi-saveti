@@ -62,16 +62,6 @@ const Home = () => {
           </div>
         </div>
       </main>
-      <div className={homePageStyles.iframeContainer}>
-        <iframe
-          title="Fantasy Premier League 2020/2021"
-          className={homePageStyles.iframe}
-          src="https://www.youtube.com/embed/wu9A6KQzmmg"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
     </Layout>
   )
 }
