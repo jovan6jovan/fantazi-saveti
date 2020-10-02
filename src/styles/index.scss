@@ -202,8 +202,13 @@ html {
   box-sizing: inherit;
 }
 body {
-  background: #16161a;
-  color: #fffffe;
+  --bg: #16161a;
+  --textNormal: #fffffe;
+  --purple: #7f5af0;
+  --green: #00ff87;
+  background-color: var(--bg);
+  color: var(--textNormal);
+  position: relative;
   font-family: sans-serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -212,6 +217,11 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-smoothing: antialiased;
+}
+body.light {
+  --bg: #fffffe;
+  --textNormal: #16161a;
 }
 img {
   max-width: 100%;

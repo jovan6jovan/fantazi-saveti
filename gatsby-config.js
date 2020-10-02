@@ -84,6 +84,7 @@ module.exports = {
       options: {
         publisherId: `ca-pub-6720459031022286`
       },
-    }
+    },
+    'gatsby-plugin-dark-mode',
   ],
 }
